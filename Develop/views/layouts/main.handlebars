@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">Tech blog
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Homepage </a>
+      <a class="nav-item nav-link" href="/dashboard">Dashboard</a>
+      <a class="nav-item nav-link" href="/logout">Logout</a>
+
+      {{#if !(logged_in)}}
+      <a class="nav-item nav-link" href="/signup">Signup</a>
+      {{/if}}
+      <a class="nav-item nav-link"    
+      href="/login">Login</a>
+      
+    </div>
+  </div>
+</nav>
+
+<main>
+    
+    <div class="post">
+      {{{body}}}
+    </div>
+  </main>
