@@ -1,27 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand">Tech blog
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/">Homepage </a>
       <a class="nav-item nav-link" href="/dashboard">Dashboard</a>
-      <a class="nav-item nav-link" href="/logout">Logout</a>
 
-      {{#if !(logged_in)}}
-      <a class="nav-item nav-link" href="/signup">Signup</a>
-      {{/if}}
+      {{#if (logged_in)}}
+      <a class="nav-item nav-link" href="/logout">Logout</a>
+      {{else}}
       <a class="nav-item nav-link"    
       href="/login">Login</a>
+      {{/if}}
       
     </div>
   </div>
 </nav>
+<h1 class="text-center">Tech Blog</h1>
+    </header>
 
 <main>
     
-    <div class="post">
+    
       {{{body}}}
-    </div>
+   
   </main>
+   </div>
+
+   {{#if (logged_in)}}
+   <script src="/js/logout.js"></script>
+   {{/if}}
+
+</body>
+
+</html>
